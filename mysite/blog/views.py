@@ -34,7 +34,7 @@ def post_detail(request, year, month, day, post):
 def post_share(request, post_id):
     # Retrieve post by id
     post = get_object_or_404(Post, id=post_id, status='published')
-    send = False
+    sent = False
     if request.method == 'POST':
         # Form was submitted
         form = EmailPostForm(request.POST)
